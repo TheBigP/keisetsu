@@ -57,25 +57,39 @@ $(".menu-trigger").removeClass("left").addClass("right");
 
 //Dropdowns
     $(".dropdown-heading").click(function(){
-      var n=0;
-      var h=0;
-      var n = $(".has-sub").find("span:hover + ul li").length;
-      var h = $(".has-sub").find("span:hover + ul li").outerHeight();
+      var key=[];
+      var tmp=0;
+      $(".has-sub").find("span:hover + ul").each(function () {
+        $(this).find('li').each(function() {
+          tmp = tmp + $(this).outerHeight();
+          key.push($(this).outerHeight());
+        });
+
+     });
+     //遍历该数组可以获取所有值
+    //  for (var i = 0 ; i < key.length; i++) {
+    //       //todo
+    //  }
+
+      // var n=0;
+      // var h=0;
+      // var n = $(".has-sub").find("span:hover + ul li").length;
+      // var h = $(".has-sub").find("span:hover + ul li").outerHeight();
       // console.log("n+++   " + n);
       // console.log("h+++   " + h);
-      var dropdown = h*n;
+      // var dropdown = h*n;
       // console.log("dropdown+++   " + dropdown);
       var todrop = $(".has-sub").find("span:hover + ul");
       var nodrop = $(".has-sub ul");
-    $(todrop).animate({"height" : dropdown}, 100);
+    $(todrop).animate({"height" : tmp}, 100);
     $(this).find("i").toggleClass("arrowdown");
     // console.log("$(todrop).height() ++++    " + $(todrop).height());
-    if ($(todrop).height() == dropdown || $(todrop).height() == (dropdown+1) ){
+    if ($(todrop).height() == tmp || $(todrop).height() == (tmp+1) ){
       $(todrop).animate({"height" : 0}, 100);
     }
     // console.log("$(nodrop).height(dropdown) +++   " + $(nodrop).height(dropdown))
     // console.log("$(nodrop).height() +++   " + $(nodrop).height())
-      if ($(nodrop).height(dropdown)){
+      if ($(nodrop).height(tmp)){
         $(nodrop).not(todrop).height(0); $(".dropdown-heading").not(this).find("i").removeClass("arrowdown");
       }
  });

@@ -37,9 +37,9 @@ body{
   font-smoothing: antialiased;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
-   --skin: #2a2a2e;
-   --skin-hover: #2098D1; 
-   --skin-color: rgba(255, 255, 255, 0.8); 
+   --skin: #001529;
+   /* --skin-hover: #2098D1; */
+   --skin-color: #fff;
 }
 .light-skin{
    --skin: #f0f0f0;
@@ -101,8 +101,7 @@ body{
 .menu-container{
    overflow: auto;
    display: block;
-   top: 120px;
-   
+   top: 79px;
 }
 .position-left{
    left: -270px;
@@ -134,11 +133,11 @@ body{
 
 .menu-container,
 .menu-head{
-    background: var(--skin);
+    /* background: var(--skin); */
+    background-color: #001529;
     position: fixed;
     z-index: 100;
     width: 270px;
-    
 }
 .menu-head .layer{
   background: rgba(0, 0, 0, 0.2);
@@ -147,7 +146,7 @@ body{
 
 
 .menu-head{
-   height: 120px;
+   /* height: 120px; */
    box-sizing: border-box; 
    margin: 0px;
    top: 0;
@@ -223,7 +222,7 @@ body{
 
    transition: .360s;
 
-   background: #f2f9f9;
+   background: #000C17;
 }
 
 
@@ -235,14 +234,15 @@ body{
    border-bottom: 0;
 
    font-size: 13px;
-   color: #444;
+   color: #A6AAAE;
    transition: .1s;
    -webkit-transition: .1s;
-   border-bottom: 1px dotted #e1e1e1;
+   /* border-bottom: 1px dotted #e1e1e1; */
 }
 
 .has-sub ul li a:hover{
-   background: #dedede;
+   background: #1890FF;
+   color: #fff;
    transition: .1s;
  -webkit-transition: .1s;
 }
